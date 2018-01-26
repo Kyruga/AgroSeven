@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1818 -10969 176 29.35">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-size: 25px;
+        font-family: Helvetica-Bold, Helvetica;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+      }
+    </style>
+  </defs>
+  <g id="Group_1080" data-name="Group 1080" transform="translate(-3140 -11939)">
+    <g id="Group_1079" data-name="Group 1079" transform="translate(-50 17)">
+      <path id="Path_1" data-name="Path 1" class="cls-1" d="M23.871,4.515A15.049,15.049,0,0,0,13.336,0,14.443,14.443,0,0,0,2.8,4.515Z" transform="translate(1373.414 953)"/>
+      <path id="Path_2" data-name="Path 2" class="cls-1" d="M1.656,5.3A15,15,0,0,0,0,12.073a14.607,14.607,0,0,0,13.4,14.6Z" transform="translate(1372 955.677)"/>
+      <path id="Path_3" data-name="Path 3" class="cls-1" d="M10.7,26.672a14.714,14.714,0,0,0,13.4-14.6A15,15,0,0,0,22.44,5.3Z" transform="translate(1377.405 955.677)"/>
+      <path id="Path_4" data-name="Path 4" class="cls-1" d="M22.464,5.3,17.8,14.03l-4.816,8.579L8.166,14.03,3.5,5.3Z" transform="translate(1373.768 955.677)"/>
+    </g>
+    <text id="agroseven" class="cls-2" transform="translate(1362 993)"><tspan x="0" y="0">agroseven</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,32 @@
+{
+	"lang":"pt-BR",
+	"name":"Aplicativo de testes diverssos ",
+	"short_name":"Testes",
+	"description":"Pagina criada para diversos testes",
+	"icons":[{
+		"purpose":"any",
+		"src":"img/logo.ico",
+		"sizes":"16x16 32x32 64x64 128x128 256x256",
+		"type":"image/x-icon"
+	},{
+		"purpose":"any",
+		"src":"img/logo.svg",
+		"sizes":"any",
+		"type":"image/svg+xml"
+	},{
+		"purpose":"any",
+		"src":"img/logo.png",
+		"sizes":"144x144",
+		"type":"image/png"
+	}],
+	"app":{
+		"service_worker":{
+			"script":"sw.js"
+		}
+	},
+	"start_url":"./start",
+	"display":"fullscreen",
+	"background_color":"#ffffff",
+	"theme_color":"#2196F3",
+	"orientation":"any"
+}

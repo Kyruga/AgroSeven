@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1342.859 -10097 24.553 15">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #939598;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g id="Group_539" data-name="Group 539" transform="translate(-1341.359 -10103.426)">
+    <g id="Group_153" data-name="Group 153">
+      <line id="Line_46" data-name="Line 46" class="cls-1" x2="21.553" transform="translate(0 7.926)"/>
+      <line id="Line_47" data-name="Line 47" class="cls-1" x2="21.553" transform="translate(0 13.926)"/>
+      <line id="Line_48" data-name="Line 48" class="cls-1" x2="21.553" transform="translate(0 19.926)"/>
+    </g>
+  </g>
+</svg>
