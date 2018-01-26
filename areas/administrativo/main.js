@@ -95,6 +95,7 @@ function CarregarGlebas() {
 
 function AdicionarGleba() {
     CarregarPropriedades();
+    CarregarSistemaPlantio();
 
     $("#index").fadeOut(function(){
         $("#index").empty();
@@ -236,6 +237,32 @@ function CarregarTalhoes(id) {
                 //var table = $("#index");
 
                 //LoadTableGlebas(table, data.glebas);
+            }
+            else {
+                alert('Erro:' + data.message);
+            }            
+        },
+        error: function(a, b, c) {
+            console.log(c);
+        }
+    });
+}
+
+function CarregarSistemaPlantio() {
+    var url = "../controllerhandler.php";
+    var dados = "tarefa=CarregarSistemaPlantio";
+
+    $.ajax({
+        url: url,
+        type: 'POST',
+        dataType: 'json',
+        data: dados,
+        success: function(data) {
+            if(!data.error) {
+
+                var dropdown = $("#SistemaPlantioInfo");
+
+                LoadSistemaPlantioInfo(dropdown, data.SistemaPlantio);
             }
             else {
                 alert('Erro:' + data.message);

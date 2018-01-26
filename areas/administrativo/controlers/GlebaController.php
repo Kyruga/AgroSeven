@@ -51,7 +51,7 @@ class GlebaController
         try {
             $propriedadeService = new PropriedadesService(); 
         
-            $propriedades = $propriedadeService->BuscarPropriedades();            
+            $propriedades = $propriedadeService->GetAll();            
 
             foreach($propriedades as $key => $objProperties) {
                 $property = new Propriedade($objProperties);

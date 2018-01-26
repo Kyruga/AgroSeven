@@ -3,11 +3,13 @@
 use areas\administrativo\controllers\PropriedadeController;
 use areas\administrativo\controllers\UsuarioController;
 use areas\administrativo\controller\glebaController;
+use areas\administrativo\controller\SistemaPlantioController;
 
 include_once('../../Config.php');
 include_once('controlers/PropriedadeController.php');
 include_once('controlers/UsuarioController.php');
 include_once('controlers/GlebaController.php');
+include_once('controlers/SistemaPlantioController.php');
 
 if(isset($_POST['tarefa'])) {
 
@@ -80,6 +82,18 @@ if(isset($_POST['tarefa'])) {
         $json = json_encode($resposta);
 
         echo $json;
+    }
+
+    if($_POST['tarefa'] == 'CarregarSistemaPlantio') {
+        $controller = new SistemaPlantioController();
+
+        $resposta = $controller->Index();
+
+        $json = json_encode($resposta);
+
+        echo $json;
+
+        exit;
     }
 
     if($_POST['tarefa'] == 'CarregarTalhoes') {

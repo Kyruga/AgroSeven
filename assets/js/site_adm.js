@@ -61,6 +61,14 @@ function loadSelectProperties(element, ObjList, id) {
     element.append(html);
 }
 
+function LoadSistemaPlantioInfo(dropdown, SistemaPlantioList) {
+    var html = "<div class='form-group'><div class='form-left'><label for=''>Sistema</label>" +
+        "<input name='sistema' type='text'></div></div><div class='form-group'><div class='form-left'>" +
+        "<label for=''>Idade</label><input name='vu_a_v' type='text'></div></div><div class='form-group'>" +
+        "<div class='form-left'><label for=''>Colheita</label><input name='colheita' type='text'>" +
+        "</div></div>";
+}
+
 function LinkParaTalhoes(id) {
     var html = "<a href='/AgroSeven/areas/administrativo/views/talhoes.php?id=" + id + "' class='btn btn-default'>Ver Talhões</a>";
 

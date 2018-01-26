@@ -50,10 +50,10 @@ class PropriedadesService
         return $json;
     }
     
-    public function BuscarPropriedades() {
+    public function GetAll() {
         $repo = new PropriedadeRepo();
 
-        $bean = $repo->GetAll('produto_propriedade');
+        $bean = $repo->GetAll('propriedade');
 
         if(count($bean) == 0) 
             throw new \Exception("Não foi possível buscar as propriedades");
