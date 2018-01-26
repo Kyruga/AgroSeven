@@ -1,13 +1,11 @@
 <?php
-    $titulo = "Novo Fúncionario - Agroseven";
+    $titulo = "Meus Dados - Agroseven";
 
     include_once('../../../Config.php');
 
     include(ROOT . "/views/header.php");
 ?>
-
-<!-- **************************      corpo do html agora      **************************** -->    
-<body>
+<body onload="carregarDadosUsuario();">
     <div class="menu-lateral">
         <div class="topo">
             <button type="button" class="btn-fechar-menu"><img src="<?php echo BASEURL ?>assets/img/icone-fechar.svg" alt=""></button>
@@ -183,105 +181,165 @@
             </div>
         </div>
     </header>
-    <section class="cadastro-funcionario" >
-        <form action="javascript:void(0);"  method="post" id="formCadastroFuncionario">
-            <div class="box-geral">
-                <div class="topo">
-                    <div class="seta">
-                        <img src="<?php echo BASEURL ?>assets/img/seta-esq-branca.svg" alt="">
-                    </div>
-                    <div class="titulo">
-                        <div class="traco"></div>
-                        <h1>novo funcionário</h1>
-                    </div>
-                    <div class="pagina-atual">
-                        <img src="<?php echo BASEURL ?>assets/img/icone-funcionario-branco.svg" class="centralizar-img" alt="">
+    <section class="s-info-funcionarios">
+        <div class="box-geral">
+            <div class="topo">
+                <div class="pagina-atual pagina-dados">
+                    <div class="icone">
+                        <img src="<?php echo BASEURL ?>assets/img/icone-usuario-branco.svg" class="centralizar-img" alt="">
                     </div>
                 </div>
-                <div class="conteudo-geral">
-                    <div class="lado-esq">
-                        <div class="item-form">
-                            <h1>Dados Pessoais</h1>
-                            <div class="form-group">
-                                <label for="">nome</label>
-                                <input type="text" name="nome">
-                            </div>
-                            <div class="form-group">
-                                <label for="">cpf</label>
-                                <input type="text" name="cpf">
-                            </div>
-                            <div class="form-group">
-                                <label for="">rg</label>
-                                <input type="text" name="rg">
-                            </div>
-                            <div class="form-group">
-                                <label for="">telefone</label>
-                                <input type="text" name="telefone">
-                            </div>
-                        </div>
-                        <div class="item-form">
-                            <h1>Endereço</h1>
-                            <div class="form-group">
-                                <label for="">Endereço</label>
-                                <input type="text" name="logradouro">
-                            </div>
-                            <div class="form-group">
-                                <label for="">número</label>
-                                <input type="text" name="numero">
-                            </div>
-                            <div class="form-group">
-                                <label for="">bairro</label>
-                                <input type="text" name="bairro">
-                            </div>
-                            <div class="form-group">
-                                <label for="">cidade</label>
-                                <input type="text" name="cidade">
-                            </div>
-                            <div class="form-group">
-                                <div class="form-left">
-                                    <label for="">estado</label>
-                                    <input type="text" name="uf">
-                                </div>
-                                <div class="form-right">
-                                    <label for="">cep</label>
-                                    <input type="text" name="cep">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item-form">
-                            <h1>Observação</h1>
-                            <div class="form-group">
-                                <label for="">Informações Importantes</label>
-                                <textarea name="" rows="20" name="observacoes"></textarea>
-                            </div>
-                        </div>
+                <div class="titulo">
+                    <div class="traco"></div>
+                    <h1>MEUS DADOS</h1>
+                </div>
+                <div class="navegacao-funcionario">
+                    <ul>
+                        <li class="active">
+                            <a href="#">
+                                <img src="<?php echo BASEURL ?>assets/img/icone-nav-dados.svg" class="centralizar-img" alt="">
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="faturas.php">
+                                <img src="<?php echo BASEURL ?>assets/img/icone-dinheiro.svg" class="icone-dinheiro centralizar-img" alt="">
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+            <div class="lado-esq">
+                <div class="info-geral-fun">
+                    <div class="foto-func">
+                        <img src="<?php echo BASEURL ?>assets/img/foto-perfil.png" alt="">
                     </div>
-                    <div class="lado-dir">
-                        <div class="add-foto">
-                            <div class="icone">
-                                <img src="<?php echo BASEURL ?>assets/img/icone-camera.svg" class="centralizar-img" alt="">
-                            </div>
-                            <a href="#">adicionar foto</a>
-                            <h1>função novo funcionário</h1>
-                            <p>qual será a função que ele desempenhara</p>
-                            <img src="<?php echo BASEURL ?>assets/img/seta-baixo-cinza.svg" class="seta-baixo" alt="">
-                            <div class="form-group">
-                                <input type="text">
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" value="adicionar funcionário" onclick="cadastroFuncionario();">
-                                <a href="funcionarios.php" >cancelar</a>
-                            </div>
-                        </div>
+                    <div class="info-func">
+                        <h1>JOSÉ DA SILVA ANDRADE</h1>
+                        <h2>ID : 221323</h2>
+                    </div>
+                    <div class="data-funcao">
+                        <p>DATA DE CADASTRO : 16/08/2019</p>
+                        <p><strong>DIRETOR GERAL</strong></p>
+                        <p class="prop-ativa">2 PROPRIEDADES ATIVA</p>
                     </div>
                 </div>
             </div>
-        </form>
+            <div class="lado-dir">
+                <form action="javascript:void(0);" method="post" id="form-dados-pessoais">
+                    <div class="item-form">
+                        <div class="titulo">
+                            <h1>Dados Pessoais</h1>
+                            <div class="traco"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Nome</label>
+                            <input type="text" name="nome" value="" class="nome" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="">E-mail</label>
+                            <input type="email" name="email" value="" class="email" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="">CPF</label>
+                            <input type="text"  name="cpf" value="" class="cpf" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="">RG</label>
+                            <input type="text" name="rg"  value="" class="rg" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Telefone</label>
+                            <input type="text" name="telefone" value="" class="telefone" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="button" class="btn-alterar-meus-dados" value="Alterar meus dados">
+                            <div class="btns-editar">
+                                <input type="submit" value="Salvar Alterações" onclick="alterarDadosUsuario();">
+                                <input type="button" class="btn-cancelar-alteracoes" value="Cancelar Alterações">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <form action="javascript:void(0);" method="post" id="form-endereco">
+                    <div class="item-form">
+                        <div class="titulo">
+                            <h1>Endereço</h1>
+                            <div class="traco"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Endereço</label>
+                            <input type="text" name="endereco" value="" class="endereco" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Número</label>
+                            <input type="text" name="numero"  value="" class="numero" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Bairro</label>
+                            <input type="text"  name="bairro" value="" class="bairro" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Cidade</label>
+                            <input type="text" name="cidade" value="" class="cidade" readonly>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-esq">
+                                <label for="">estado</label>
+                                <input type="text" name="estado"  value="" class="estado" readonly>
+                            </div>
+                            <div class="form-dir">
+                                <label for="">cep</label>
+                                <input type="text" name="cep" value="" class="cep" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn-alterar-meus-dados" value="Alterar Endereço">
+                            <div class="btns-editar">
+                                <input type="submit" value="Salvar Alterações" onclick="alterarDadosUsuario();">
+                                <input type="button" class="btn-cancelar-alteracoes" value="Cancelar Alterações">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <form action="" id="form-dados-acesso">
+                    <div class="item-form">
+                        <div class="titulo">
+                            <h1>Dados de Acesso</h1>
+                            <div class="traco"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">ID</label>
+                            <input type="text" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Senha</label>
+                            <input type="password" readonly>
+                        </div>
+                        <div class="form-group" id="input-confirmar-senha">
+                            <label for="">Confirmar Senha</label>
+                            <input type="password" readonly>
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn-alterar-meus-dados" value="Alterar Senha">
+                            <div class="btns-editar">
+                                <input type="submit" value="Salvar Senha">
+                                <input type="button" class="btn-cancelar-alteracoes" value="Cancelar Alterações">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </section>
     <script src="<?php echo BASEURL ?>assets/js/vendor/jquery-1.11.2.min.js"></script>
     <script src="<?php echo BASEURL ?>assets/js/vendor/bootstrap.min.js"></script>
     <script src="<?php echo BASEURL ?>assets/js/main.js"></script>
     <script src="../main.js"></script>
+
 </body>
 
 </html>

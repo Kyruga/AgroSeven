@@ -1,12 +1,11 @@
 <?php
-    $titulo = "Novo Fúncionario - Agroseven";
+    $titulo = "Nova propriedade localização - Agroseven";
 
     include_once('../../../Config.php');
 
     include(ROOT . "/views/header.php");
 ?>
 
-<!-- **************************      corpo do html agora      **************************** -->    
 <body>
     <div class="menu-lateral">
         <div class="topo">
@@ -183,100 +182,84 @@
             </div>
         </div>
     </header>
-    <section class="cadastro-funcionario" >
-        <form action="javascript:void(0);"  method="post" id="formCadastroFuncionario">
-            <div class="box-geral">
-                <div class="topo">
-                    <div class="seta">
-                        <img src="<?php echo BASEURL ?>assets/img/seta-esq-branca.svg" alt="">
-                    </div>
-                    <div class="titulo">
+    <section class="s-page">
+        <div class="topo-page">
+            <div class="area-seta">
+                <img src="<?php echo BASEURL ?>assets/img/seta-esq-branca.svg" alt="">
+            </div>
+            <div class="titulo">
+                <div class="traco"></div>
+                <h1>nova propriedade</h1>
+            </div>
+            <div class="etapas">
+                <ul>
+                    <li class="active etapa-concluida"></li>
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div class="conteudo">
+            <div class="lado-esq">
+                <form action="javascript:void(0);"  method="post" id="formLocalizacaoNovaPropriedade">
+                    <div class="form-esq">
+                        <h1>Endereço</h1>
                         <div class="traco"></div>
-                        <h1>novo funcionário</h1>
-                    </div>
-                    <div class="pagina-atual">
-                        <img src="<?php echo BASEURL ?>assets/img/icone-funcionario-branco.svg" class="centralizar-img" alt="">
-                    </div>
-                </div>
-                <div class="conteudo-geral">
-                    <div class="lado-esq">
-                        <div class="item-form">
-                            <h1>Dados Pessoais</h1>
-                            <div class="form-group">
-                                <label for="">nome</label>
-                                <input type="text" name="nome">
+                        <div class="form-group">
+                            <label for="">endereço</label>
+                            <input type="text" name="endereco">
+                        </div>
+                        <div class="form-group">
+                            <label for="">numero</label>
+                            <input type="text" name="numero">
+                        </div>
+                        <div class="form-group">
+                            <label for="">bairro</label>
+                            <input type="text" name="bairro">
+                        </div>
+                        <div class="form-group">
+                            <label for="">cidade</label>
+                            <input type="text" name="cidade">
+                        </div>
+                        <div class="form-group">
+                            <div class="group-esq">
+                                <label for="">estado</label>
+                                <input type="text" name="estado">
                             </div>
-                            <div class="form-group">
-                                <label for="">cpf</label>
-                                <input type="text" name="cpf">
-                            </div>
-                            <div class="form-group">
-                                <label for="">rg</label>
-                                <input type="text" name="rg">
-                            </div>
-                            <div class="form-group">
-                                <label for="">telefone</label>
-                                <input type="text" name="telefone">
+                            <div class="group-dir">
+                                <label for="">cep</label>
+                                <input type="text" name="cep">
                             </div>
                         </div>
-                        <div class="item-form">
-                            <h1>Endereço</h1>
-                            <div class="form-group">
-                                <label for="">Endereço</label>
-                                <input type="text" name="logradouro">
-                            </div>
-                            <div class="form-group">
-                                <label for="">número</label>
-                                <input type="text" name="numero">
-                            </div>
-                            <div class="form-group">
-                                <label for="">bairro</label>
-                                <input type="text" name="bairro">
-                            </div>
-                            <div class="form-group">
-                                <label for="">cidade</label>
-                                <input type="text" name="cidade">
-                            </div>
-                            <div class="form-group">
-                                <div class="form-left">
-                                    <label for="">estado</label>
-                                    <input type="text" name="uf">
-                                </div>
-                                <div class="form-right">
-                                    <label for="">cep</label>
-                                    <input type="text" name="cep">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item-form">
-                            <h1>Observação</h1>
-                            <div class="form-group">
-                                <label for="">Informações Importantes</label>
-                                <textarea name="" rows="20" name="observacoes"></textarea>
-                            </div>
+                        <div class="form-group">
+                            <label for="">localização geográfica</label>
+                            <input type="text" name="locgeografica">
                         </div>
                     </div>
-                    <div class="lado-dir">
-                        <div class="add-foto">
-                            <div class="icone">
-                                <img src="<?php echo BASEURL ?>assets/img/icone-camera.svg" class="centralizar-img" alt="">
-                            </div>
-                            <a href="#">adicionar foto</a>
-                            <h1>função novo funcionário</h1>
-                            <p>qual será a função que ele desempenhara</p>
-                            <img src="<?php echo BASEURL ?>assets/img/seta-baixo-cinza.svg" class="seta-baixo" alt="">
-                            <div class="form-group">
-                                <input type="text">
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" value="adicionar funcionário" onclick="cadastroFuncionario();">
-                                <a href="funcionarios.php" >cancelar</a>
-                            </div>
+                    <div class="form-dir">
+                        <div class="escolher-foto">
+                            <img src="<?php echo BASEURL ?>assets/img/mapa.svg" class="img-responsive" alt="">
+                            <span>marque sua propriedade no mapa acima</span>
                         </div>
+                    </div>
+                </form>
+            </div>
+            <div class="lado-dir">
+                <div class="info-passo">
+                    <span>2 passo</span>
+                    <div class="icone">
+                        <img src="<?php echo BASEURL ?>assets/img/icone-localizacao.svg" class="centralizar-img" alt="">
+                    </div>
+                    <h1>localização</h1>
+                    <p>preencha os campos ao lado e clique no botão avançar</p>
+                    <div class="btns">
+                        <a href="#" class="btn-avancar" onclick="cadastroLocalizacaoPropriedade();">avançar</a>
+                        <a href="nova-propriedade.php" class="btn-cancelar">cancelar</a>
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
     </section>
     <script src="<?php echo BASEURL ?>assets/js/vendor/jquery-1.11.2.min.js"></script>
     <script src="<?php echo BASEURL ?>assets/js/vendor/bootstrap.min.js"></script>

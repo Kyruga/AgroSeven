@@ -48,7 +48,6 @@ class ProdutoService
                 }                
             }
         }
-
         return $produtosIds;
     }
 }

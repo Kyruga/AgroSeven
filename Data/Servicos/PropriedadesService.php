@@ -5,9 +5,6 @@ use Data\Repository\PropriedadeRepo;
 use Data\Repository\ProdutoRepo;
 use Data\Entidades\Propriedade;
 
-include_once(ROOT . 'data/repository/propriedaderepo.php');
-include_once(ROOT . 'data/entidades/propriedade.php');
-
 class PropriedadesService
 {
     public function __construct() {
@@ -39,18 +36,8 @@ class PropriedadesService
 
         return $propriedade;
     }
-
-    public function BuscarPropriedadesComProdutos() {
-        $repo = new PropriedadeRepo();
-
-        $bean = $repo->GetAllWithShared('propriedade','produto','produto_propriedade.propriedade_id = ?');
-
-        $json = json_encode($bean);
-
-        return $json;
-    }
     
-    public function GetAll() {
+    public function BuscarPropriedades() {
         $repo = new PropriedadeRepo();
 
         $bean = $repo->GetAll('propriedade');
@@ -66,4 +53,22 @@ class PropriedadesService
 
         return $listPropriedades;
     }
+
+    public function salvarNovoLocalPropriedade($propriedade) {
+        
+        $propriedadeRepo = new PropriedadeRepo();
+
+        $existe = $propriedadeRepo->FindOne('propriedade', 'id=?' , array(4));
+            
+        if(!empty($existe)) {
+
+            $propriedade->id = 1;
+            $propriedade->nome = "Teste";
+
+            return $propriedadeRepo->Save('propriedade', $propriedade);
+        }else{
+            throw new \Exception('algum erro do cpf');
+        }
+
+    } 
 }

@@ -97,6 +97,46 @@ if(isset($_POST['tarefa'])) {
     }
 
     if($_POST['tarefa'] == 'CarregarTalhoes') {
-        
     }
+
+    if($_POST['tarefa'] == 'cadastrarNovoUsuario') {
+
+        $usuarioController = new UsuarioController();
+
+        $resposta = $usuarioController->cadastrarNovoUsuario($_POST);
+
+        $json = json_encode($resposta);
+        
+        echo $json;
+
+        exit;
+    }
+
+    if($_POST['tarefa'] == 'alterarDadosUsuario') {
+        
+        $controladorUsuario = new UsuarioController();
+        $resposta = $controladorUsuario->alterarDadosUsuario($_POST);
+        $json = json_encode($resposta);
+        echo $json;
+
+    }
+
+    if($_POST['tarefa'] == 'carregarDadosUsuario') {
+        $controladorUsuario = new UsuarioController();
+        $resposta = $controladorUsuario->carregarDadosUsuario($_POST['id']);
+        $json = json_encode($resposta);
+        echo $json;
+    }
+
+    if($_POST['tarefa'] == 'salvarNovoLocalPropriedade') {
+
+        $propriedadeController = new PropriedadeController();
+
+        $resposta = $propriedadeController->salvarNovoLocalPropriedade($_POST);
+
+        $json = json_encode($resposta);
+        
+        echo $json;
+    }
+
 }

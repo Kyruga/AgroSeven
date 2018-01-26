@@ -23,7 +23,7 @@ class Usuario extends BaseEntidade
     public $login;
     public $senha;
     
-    public function __construct($array = null) {
+    public function __construct($array) {
         parent::__construct($array);        
     }
 

@@ -1,12 +1,11 @@
 <?php
-    $titulo = "Novo Fúncionario - Agroseven";
+    $titulo = "Propriedade - Agroseven";
 
     include_once('../../../Config.php');
 
     include(ROOT . "/views/header.php");
 ?>
 
-<!-- **************************      corpo do html agora      **************************** -->    
 <body>
     <div class="menu-lateral">
         <div class="topo">
@@ -183,105 +182,108 @@
             </div>
         </div>
     </header>
-    <section class="cadastro-funcionario" >
-        <form action="javascript:void(0);"  method="post" id="formCadastroFuncionario">
-            <div class="box-geral">
-                <div class="topo">
-                    <div class="seta">
-                        <img src="<?php echo BASEURL ?>assets/img/seta-esq-branca.svg" alt="">
-                    </div>
-                    <div class="titulo">
-                        <div class="traco"></div>
-                        <h1>novo funcionário</h1>
-                    </div>
-                    <div class="pagina-atual">
-                        <img src="<?php echo BASEURL ?>assets/img/icone-funcionario-branco.svg" class="centralizar-img" alt="">
+    <section class="s-funcionarios">
+        <div class="box-geral">
+            <div class="lado-esq">
+                <div class="area-propriedades">
+                    <div class="prop-principal">
+                        <div class="info-prop">
+                            <img src="<?php echo BASEURL ?>assets/img/icone-propriedades.svg" alt="">
+                            <div class="texto">
+                                <span>fazenda</span>
+                                <h2>SANTA CRUZ</h2>
+                            </div>
+                        </div>
+                        <img src="<?php echo BASEURL ?>assets/img/seta-baixo-cinza.svg" alt="" class="seta-baixo">
                     </div>
                 </div>
-                <div class="conteudo-geral">
-                    <div class="lado-esq">
-                        <div class="item-form">
-                            <h1>Dados Pessoais</h1>
-                            <div class="form-group">
-                                <label for="">nome</label>
-                                <input type="text" name="nome">
-                            </div>
-                            <div class="form-group">
-                                <label for="">cpf</label>
-                                <input type="text" name="cpf">
-                            </div>
-                            <div class="form-group">
-                                <label for="">rg</label>
-                                <input type="text" name="rg">
-                            </div>
-                            <div class="form-group">
-                                <label for="">telefone</label>
-                                <input type="text" name="telefone">
-                            </div>
-                        </div>
-                        <div class="item-form">
-                            <h1>Endereço</h1>
-                            <div class="form-group">
-                                <label for="">Endereço</label>
-                                <input type="text" name="logradouro">
-                            </div>
-                            <div class="form-group">
-                                <label for="">número</label>
-                                <input type="text" name="numero">
-                            </div>
-                            <div class="form-group">
-                                <label for="">bairro</label>
-                                <input type="text" name="bairro">
-                            </div>
-                            <div class="form-group">
-                                <label for="">cidade</label>
-                                <input type="text" name="cidade">
-                            </div>
-                            <div class="form-group">
-                                <div class="form-left">
-                                    <label for="">estado</label>
-                                    <input type="text" name="uf">
-                                </div>
-                                <div class="form-right">
-                                    <label for="">cep</label>
-                                    <input type="text" name="cep">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item-form">
-                            <h1>Observação</h1>
-                            <div class="form-group">
-                                <label for="">Informações Importantes</label>
-                                <textarea name="" rows="20" name="observacoes"></textarea>
-                            </div>
+                <div class="dados-gerais-fazenda">
+                    <div class="area-fazenda">
+                        <div class="logo-fazenda">
+                            <img src="<?php echo BASEURL ?>assets/img/logo-fazenda.svg" class="centralizar-img" alt="">
                         </div>
                     </div>
-                    <div class="lado-dir">
-                        <div class="add-foto">
-                            <div class="icone">
-                                <img src="<?php echo BASEURL ?>assets/img/icone-camera.svg" class="centralizar-img" alt="">
-                            </div>
-                            <a href="#">adicionar foto</a>
-                            <h1>função novo funcionário</h1>
-                            <p>qual será a função que ele desempenhara</p>
-                            <img src="<?php echo BASEURL ?>assets/img/seta-baixo-cinza.svg" class="seta-baixo" alt="">
-                            <div class="form-group">
-                                <input type="text">
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" value="adicionar funcionário" onclick="cadastroFuncionario();">
-                                <a href="funcionarios.php" >cancelar</a>
-                            </div>
-                        </div>
+                    <a href="#" class="btn-deletar">deletar</a>
+                    <div class="info">
+                        <h1>fazenda santa cruz</h1>
+                        <h2>ID : 221323</h2>
+                    </div>
+                    <div class="dados-data">
+                        <p>DATA DE CADASTRO : 16/08/2019</p>
+                        <p>23 FUNCIONÁRIOS</p>
+                        <ul class="cultivos">
+                            <li class="item">
+                                <div class="icone">
+                                    <img src="<?php echo BASEURL ?>assets/img/icone-cafe.svg" class="centralizar-img icone-cafe" alt="">
+                                </div>
+                                <span>café</span>
+                            </li>
+                            <li class="item">
+                                <div class="icone">
+                                    <img src="<?php echo BASEURL ?>assets/img/icone-gado.svg" class="centralizar-img icone-gado" alt="">
+                                </div>
+                                <span>gado</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </form>
+            <div class="lado-dir">
+                <div class="topo">
+                    <div class="titulo">
+                        <div class="traco"></div>
+                        <h1>fúncionarios</h1>
+                    </div>
+                    <div class="navegacao">
+                        <ul>
+                            <li class="active">
+                                <a href="#">
+                                <img src="<?php echo BASEURL ?>assets/img/icone-nav-dados.svg" alt="">
+                            </a>
+                            </li>
+                            <li >
+                                <a href="funcionarios.php">
+                                <img src="<?php echo BASEURL ?>assets/img/icone-nav-funcionarios.svg" alt="">
+                            </a>
+                            </li>
+                            <li>
+                                <a href="usuarios.php">
+                                <img src="<?php echo BASEURL ?>assets/img/icone-nav-usuario.svg" alt="">
+                            </a>
+                            </li>
+                            <li>
+                                <a href="arquivos-propriedade.php">
+                                <img src="<?php echo BASEURL ?>assets/img/icone-nav-anexo.svg" alt="">
+                            </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="funcionarios-geral">
+                    <div class="topo-sessao">
+                        <div class="setores">
+                            <h2>todos setores</h2>
+                            <img src="<?php echo BASEURL ?>assets/img/seta-baixo-cinza.svg" alt="">
+                        </div>
+                        <div class="pesquisar-add">
+                            <button type="button" class="btn-pesquisar">
+                                <img src="<?php echo BASEURL ?>assets/img/icone-pesquisar.svg" alt="">
+                            </button>
+                            <a href="#" class="btn-add-funcionario">
+                            <span>+</span> adicionar
+                        </a>
+                        </div>
+                    </div>
+                    <div class="todos-funcionarios">
+                            Fazer esta dash 24/01
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <script src="<?php echo BASEURL ?>assets/js/vendor/jquery-1.11.2.min.js"></script>
     <script src="<?php echo BASEURL ?>assets/js/vendor/bootstrap.min.js"></script>
     <script src="<?php echo BASEURL ?>assets/js/main.js"></script>
-    <script src="../main.js"></script>
 </body>
 
 </html>

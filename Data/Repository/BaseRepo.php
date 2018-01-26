@@ -3,7 +3,7 @@
 namespace Data\Repository;
 
 class BaseRepo
-{    
+{
     /**
      * Configura um objeto bean simples
      * 
@@ -152,7 +152,7 @@ class BaseRepo
 
         $listName = 'shared' . ucfirst($typeChild);
 
-        $bean->$listName[] = $beanChildList;
+        $bean->$listName = $beanChildList;
 
         return \R::store($bean);
     }
@@ -166,38 +166,6 @@ class BaseRepo
      */
     public function GetById($type, $id) {
         return \R::load($type, $id);
-    }
-
-    /**
-     * Busca pelos filhos ligados por uma conexao de muitos para muitos
-     * 
-     * Example:
-     * <code>
-     * $e = \R::findOne('propriedade');
-     *  $x = $e
-     *      ->withCondition('produto_propriedade.propriedade_id = ?',[$e->id])
-     *      ->sharedProduto; //shared + parent table name
-     *
-     *  return $e;
-     * </code>
-     * @param $type O tipo da tabela pai a ser buscada
-     * @param $id o id do tipo a ser buscado
-     * @param $typeChild o nome da tabela ligada no final de um relacionamento de muito para muitos
-     * @param $condition a condicao usada após o where do sql
-     * 
-     * @return OODBBean
-     */
-    public function GetByIdWithShared($type, $id, $typeChild, $condition) {
-        $shared = 'shared' . ucfirst($typeChild);
-        
-        $e = \R::load($type, $id);
-        $x = $e
-            ->withCondition($condition,[$e->id])
-            ->$shared; //shared + parent table name
-
-        $e->$shared = $x;
-            
-        return $e;        
     }
     /**
      * FindOne retorna o primeiro resultado de acordo com a condição
@@ -235,42 +203,8 @@ class BaseRepo
     public function GetAll($type) {
         return \R::getAll('select * from ' . $type);
     }
-    /**
-     * Busca pelos filhos ligados por uma conexao de muitos para muitos
-     * 
-     * Example:
-     * <code>
-     * $e = \R::findOne('propriedade');
-     *  $x = $e
-     *      ->withCondition('produto_propriedade.propriedade_id = ?',[$e->id])
-     *      ->sharedProduto; //shared + parent table name
-     *
-     *  return $e;
-     * </code>
-     * @param $type O tipo da tabela pai a ser buscada
-     * @param $typeChild o nome da tabela ligada no final de um relacionamento de muito para muitos
-     * @param $condition a condicao usada após o where do sql
-     * 
-     * @return OODBBean
-     */
-    public function GetAllWithShared($type, $typeChild, $condition) {
-        $shared = 'shared' . ucfirst($typeChild);
-        
-        $e = \R::getAll('select * from ' . $type);        
 
-        foreach($e as $key => $element) {
-
-            $bean = \R::convertToBean($type,$element);
-
-            $childrens = $bean
-                         ->withCondition($condition,[$bean->id])
-                         ->$shared;
-
-            $bean->$shared = $childrens;
-
-            $result[] = $bean;
-        }
-            
-        return $result;      
+    public function Delete($type, $id) {
+        return null;
     }
 }

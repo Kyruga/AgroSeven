@@ -1,18 +1,62 @@
-function cadastroFuncionario() {
-    var dados = $('#formCadastroPropriedade').serialize();
+const url = "/AgroSeven/areas/administrativo/controllerhandler.php";
 
-    var caminho = new Object();
-    caminho.modulo = 'administrativo';
-    caminho.controlador = 'funcionario';
-    caminho.tarefa = 'cadastrar';
+function cadastroInicialUsuario() {
+    var dados = $('#formCadastroDeUsuario').serialize();
+    dados = dados + "&tarefa=cadastrarNovoUsuario";
 
-    ajax(dados, tarefa);
+    $.ajax({
+        url: url,
+        type: 'POST',
+        dataType: 'json',
+        data: dados,
+        success: function(data) {
+            if(!data.error) {
+                alert('usuario salvo com sucesso por favor atualize seus dados');
+                window.location = "./meus-dados.php";
+            }
+            else {
+                alert('Erro:' + data.message);
+            }
+        },
+        error: function(a, b, c) {
+            console.log(c);
+        }
+    });
+}
+
+function alterarDadosUsuario() {
+    debugger;
+    var dados = $("#form-dados-pessoais").serialize();
+    dados = dados + "&" + $("#form-endereco").serialize();
+    dados = dados + "&tarefa=alterarDadosUsuario";
+
+    $.ajax({
+        url: url,
+        type: 'POST',
+        dataType: 'json',
+        data: dados,
+        success: function(data) {
+            if(!data.error) {
+                $(".lado-dir :input[type='text']").prop( "readonly", true );
+                $(".lado-dir :input[type='email']").prop( "readonly", true );
+                $(".lado-dir :input[type='password']").prop( "readonly", true );
+                $('.btn-alterar-meus-dados').css('display','inline');
+                $('.btns-editar').css('display','none');
+                alert('dados usuario alterados com sucesso');
+            }
+            else {
+                alert('Erro:' + data.message);
+            }            
+        },
+        error: function(a, b, c) {
+            console.log(c);
+        }
+    });
 }
 
 function cadastroPropriedade() {
     var dados = $("#formCadastroPropriedade").serialize();
 
-    var url = "/AgroSeven/areas/administrativo/controllerhandler.php";
     dados = dados + "&tarefa=cadastrarPropriedade";
     
     $.ajax({
@@ -23,6 +67,33 @@ function cadastroPropriedade() {
         success: function(data) {
             if(!data.error) {
                 alert('Salvou no codigo:' + data.codigo);
+                window.location = "./localizacao.php";
+            }
+            else {
+                alert('Erro:' + data.message);
+            }
+        },
+        error: function(a, b, c) {
+            console.log(c);
+        }
+    });
+}
+
+function cadastroLocalizacaoPropriedade() {
+    debugger;
+    var dados = $("#formLocalizacaoNovaPropriedade").serialize();
+
+    dados = dados + "&tarefa=salvarNovoLocalPropriedade";
+    
+    $.ajax({
+        url: url,
+        type: 'POST',
+        dataType: 'json',
+        data: dados,
+        success: function(data) {
+            if(!data.error) {
+                alert('Salvou no codigo:' + data.codigo);
+                window.location = "./localizacao.php";
             }
             else {
                 alert('Erro:' + data.message);
@@ -35,6 +106,7 @@ function cadastroPropriedade() {
 }
 
 function loginUsuario() {
+    
     var dados = $("#formLoginDeUsuario").serialize();
     var url = "/AgroSeven/areas/administrativo/controllerhandler.php";
     dados = dados + "&tarefa=loginUsuario";
@@ -237,6 +309,38 @@ function CarregarTalhoes(id) {
                 //var table = $("#index");
 
                 //LoadTableGlebas(table, data.glebas);
+            }
+            else {
+                alert('Erro:' + data.message);
+            }            
+        },
+        error: function(a, b, c) {
+            console.log(c);
+        }
+    });
+}
+
+function carregarDadosUsuario(id) {
+    var dados = "id=1&tarefa=carregarDadosUsuario";
+
+    $.ajax({
+        url: url,
+        type: 'POST',
+        dataType: 'json',
+        data: dados,
+        success: function(data) {
+            if(!data.error) {
+                $("#form-dados-pessoais .nome").val(data.dados.nome);
+                $("#form-dados-pessoais .email").val(data.dados.email);
+                $("#form-dados-pessoais .cpf").val(data.dados.cpf);
+                $("#form-dados-pessoais .rg").val(data.dados.rg);
+                $("#form-dados-pessoais .telefone").val(data.dados.telefone);
+                $("#form-endereco .endereco").val(data.dados.endereco);
+                $("#form-endereco .numero").val(data.dados.numero);
+                $("#form-endereco .bairro").val(data.dados.bairro);
+                $("#form-endereco .cidade").val(data.dados.cidade);
+                $("#form-endereco .estado").val(data.dados.estado);
+                $("#form-endereco .cep").val(data.dados.cep);
             }
             else {
                 alert('Erro:' + data.message);

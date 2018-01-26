@@ -41,4 +41,22 @@ class PropriedadeController
             return $resposta;
         }
     }    
+
+    public function salvarNovoLocalPropriedade($propriedade) {
+        $propriedadeServico = new PropriedadesService();
+        $propriedadeEntidade = new Propriedade($propriedade);
+                
+        try {
+            $id = $propriedadeServico->salvarNovoLocalPropriedade($propriedadeEntidade);
+
+            $resposta = array('error' => false, 'codigo' => $id);
+
+            return $resposta;
+        }
+        catch(\Exception $e) {
+            $resposta = array('error' => true, 'message' => $e->getMessage());
+
+            return $resposta;
+        }
+    }    
 }

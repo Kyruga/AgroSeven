@@ -29,7 +29,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="meus-dados.html">
+                    <a href="meus-dados.php">
                         <div class="icone">
                             <img src="<?php echo BASEURL ?>assets/img/icone-dados.svg" alt="">
                         </div>
@@ -37,7 +37,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="propriedades.html">
+                    <a href="propriedades.php">
                         <div class="icone">
                             <img src="<?php echo BASEURL ?>assets/img/icone-propriedades.svg" alt="">
                         </div>
@@ -64,7 +64,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="atualizacao.html">
+                    <a href="atualizacao.php">
                         <div class="icone">
                             <img src="<?php echo BASEURL ?>assets/img/icone-atualizacoes.svg" alt="">
                             <div class="alerta">
@@ -77,7 +77,7 @@
             </ul>
         </nav>
         <div class="area-sair">
-            <a href="index.html">sair <img src="<?php echo BASEURL ?>assets/img/seta-baixo-amarela.svg" alt=""></a>
+            <a href="index.php">sair <img src="<?php echo BASEURL ?>assets/img/seta-baixo-amarela.svg" alt=""></a>
         </div>
     </div>
     <div class="area-notificacoes">
@@ -218,9 +218,9 @@
                     <h1>dados básicos</h1>
                     <p>preencha os campos ao lado e clique no botão avançar</p>
                     <div class="btns">
-                        <!-- <a href="localizacao.html" class="btn-avancar">avançar</a> -->
+                        <!-- <a href="localizacao.php" class="btn-avancar">avançar</a> -->
                         <a href="#" class="btn-avancar" onclick="cadastroPropriedade()">avançar</a>
-                        <a href="propriedades.html" class="btn-cancelar">cancelar</a>
+                        <a href="propriedades.php" class="btn-cancelar">cancelar</a>
                     </div>
                 </div>
             </div>

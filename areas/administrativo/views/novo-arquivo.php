@@ -1,12 +1,10 @@
 <?php
-    $titulo = "Novo Fúncionario - Agroseven";
+    $titulo = "Novo Arquivo - Agroseven";
 
     include_once('../../../Config.php');
 
     include(ROOT . "/views/header.php");
 ?>
-
-<!-- **************************      corpo do html agora      **************************** -->    
 <body>
     <div class="menu-lateral">
         <div class="topo">
@@ -183,8 +181,8 @@
             </div>
         </div>
     </header>
-    <section class="cadastro-funcionario" >
-        <form action="javascript:void(0);"  method="post" id="formCadastroFuncionario">
+    <section class="cadastro-funcionario">
+        <form action="javascript:void(0);"  method="post" id="formCadastroUsuário">
             <div class="box-geral">
                 <div class="topo">
                     <div class="seta">
@@ -192,69 +190,15 @@
                     </div>
                     <div class="titulo">
                         <div class="traco"></div>
-                        <h1>novo funcionário</h1>
+                        <h1>novo usuário</h1>
                     </div>
                     <div class="pagina-atual">
-                        <img src="<?php echo BASEURL ?>assets/img/icone-funcionario-branco.svg" class="centralizar-img" alt="">
+                        <img src="<?php echo BASEURL ?>assets/img/icone-usuario-branco.svg" class="centralizar-img" alt="">
                     </div>
                 </div>
                 <div class="conteudo-geral">
                     <div class="lado-esq">
-                        <div class="item-form">
-                            <h1>Dados Pessoais</h1>
-                            <div class="form-group">
-                                <label for="">nome</label>
-                                <input type="text" name="nome">
-                            </div>
-                            <div class="form-group">
-                                <label for="">cpf</label>
-                                <input type="text" name="cpf">
-                            </div>
-                            <div class="form-group">
-                                <label for="">rg</label>
-                                <input type="text" name="rg">
-                            </div>
-                            <div class="form-group">
-                                <label for="">telefone</label>
-                                <input type="text" name="telefone">
-                            </div>
-                        </div>
-                        <div class="item-form">
-                            <h1>Endereço</h1>
-                            <div class="form-group">
-                                <label for="">Endereço</label>
-                                <input type="text" name="logradouro">
-                            </div>
-                            <div class="form-group">
-                                <label for="">número</label>
-                                <input type="text" name="numero">
-                            </div>
-                            <div class="form-group">
-                                <label for="">bairro</label>
-                                <input type="text" name="bairro">
-                            </div>
-                            <div class="form-group">
-                                <label for="">cidade</label>
-                                <input type="text" name="cidade">
-                            </div>
-                            <div class="form-group">
-                                <div class="form-left">
-                                    <label for="">estado</label>
-                                    <input type="text" name="uf">
-                                </div>
-                                <div class="form-right">
-                                    <label for="">cep</label>
-                                    <input type="text" name="cep">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item-form">
-                            <h1>Observação</h1>
-                            <div class="form-group">
-                                <label for="">Informações Importantes</label>
-                                <textarea name="" rows="20" name="observacoes"></textarea>
-                            </div>
-                        </div>
+                        Precisa dessa tela 24-01
                     </div>
                     <div class="lado-dir">
                         <div class="add-foto">
@@ -262,15 +206,33 @@
                                 <img src="<?php echo BASEURL ?>assets/img/icone-camera.svg" class="centralizar-img" alt="">
                             </div>
                             <a href="#">adicionar foto</a>
-                            <h1>função novo funcionário</h1>
+                            <h1>função novo usuário</h1>
                             <p>qual será a função que ele desempenhara</p>
                             <img src="<?php echo BASEURL ?>assets/img/seta-baixo-cinza.svg" class="seta-baixo" alt="">
                             <div class="form-group">
-                                <input type="text">
+                                <input name="funcao" type="text">
                             </div>
                             <div class="form-group">
-                                <input type="submit" value="adicionar funcionário" onclick="cadastroFuncionario();">
-                                <a href="funcionarios.php" >cancelar</a>
+                                <label for="">Nível de Administração</label>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="roles[]" value="1">administrador total
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="roles[]" value="3">Apenas Lê as Informações
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="roles[]" value="2">Lê, Altera e Cadastrar as Informações
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="adicionar responsável" onclick="AdicionarUsuario()">
+                                <a href="usuarios.php">cancelar</a>
                             </div>
                         </div>
                     </div>
