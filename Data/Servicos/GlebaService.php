@@ -30,12 +30,17 @@ class GlebaService
 
         return $gleba;
     }
-    public function CadastrarGleba($array, $propriedade) {
+    public function CadastrarGleba($array, $propriedade, $sistemaPlantio) {
         $gleba = new Gleba($array);
         $glebaRepository = new GlebaRepo();
 
-        $id = $glebaRepository->SaveWithParent('gleba',$gleba,'propriedade',$propriedade);        
+        $beanPropriedade = $glebaRepository->SetBean('propriedade',$propriedade);
+        $beanSistemaPlantio = $glebaRepository->SetBean('sistemadeplantio',$sistemaPlantio); 
+        $beanGleba = $glebaRepository->SetBean('gleba', $gleba);
         
-        return $id;
+        $beanGleba->propriedade = $beanPropriedade;
+        $beanGleba->sistemadeplantio = $beanSistemaPlantio;
+
+        return \R::store($beanGleba);    
     }
 }

@@ -1,6 +1,4 @@
 <?php
-
-use Data\Entidades\Propriedade;
     $titulo = "Gleba - Agroseven";
 
     include_once('../../../Config.php');
@@ -288,10 +286,115 @@ use Data\Entidades\Propriedade;
                                                 <div id="dropdownPropriedades"></div>
                                             </div>                                
                                         </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">Caracterização</div>
+                                            <div class="panel-body">
+                                                <div class="form-group">
+                                                    <div class="form-left">
+                                                        <label for="">Sistema de Plantio</label>
+                                                        <div id="dropdownSistemaPlantio"></div>
+                                                    </div>                                
+                                                </div>
+                                                <div class='form-group'>
+                                                    <div class='form-left'>
+                                                        <label for=''>Sistema</label>
+                                                        <input id="sistema" name='sistema' type='text' disabled>
+                                                    </div>
+                                                    <div class='form-group'>
+                                                        <div class='form-left'>
+                                                            <label for=''>Idade</label>
+                                                            <input id="vu_a_v" name='vu_a_v' type='text' disabled>
+                                                        </div>
+                                                    </div>
+                                                    <div class='form-group'>
+                                                        <div class='form-left'>
+                                                            <label for=''>Colheita</label>
+                                                            <input id="colheita" name='colheita' type='text' disabled>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                                        
                                         <div class="form-group">
                                             <div class="form-left">
                                                 <label for="">Nome da Gleba</label>
                                                 <input name="nome" type="text">
+                                            </div>                                
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="form-left">
+                                                <label for="">Numero de Plantas</label>
+                                                <input id="numeroplantas" name="numeroplantas" type="text">
+                                            </div>                                
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="form-left">
+                                                <label for="">Área</label>
+                                                <input id="area" name="area" type="text">
+                                            </div>                                
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">Espaçamentos</div>
+                                            <div class="panel-body">
+                                                <div class="form-group">
+                                                    <div class="form-left">
+                                                        <label for="">rua</label>
+                                                        <input id="rua" name="rua" type="text" onblur="CalcularNumeroPlantas()">
+                                                    </div>                                
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="form-left">
+                                                        <label for="">Planta</label>
+                                                        <input id="planta" name="planta" type="text" onblur="CalcularNumeroPlantas()">
+                                                    </div>                                
+                                                </div>
+                                            </div>
+                                        </div>                                        
+                                        <div class="form-group">
+                                            <div class="form-left">
+                                                <label for="">Saca Hectare</label>
+                                                <input id="sacahectare" name="sacahectare" type="text" onblur="CalcularSacas()">
+                                            </div>                                
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading"></div>
+                                            <div class="panel-body">
+                                                <div class="form-group">
+                                                    <div class="form-left">
+                                                        <label for="">Stand</label>
+                                                        <input id="stand" name="stand" type="text" disabled>
+                                                    </div>                                
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="form-left">
+                                                        <label for="">L PI</label>
+                                                        <input id="lpi" name="lpi" type="text" disabled>
+                                                    </div>                                
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="form-left">
+                                                        <label for="">Saca</label>
+                                                        <input id="saca" name="saca" type="text" disabled>
+                                                    </div>                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="form-left">
+                                                <label for="">Potencial</label>
+                                                <input name="potencial" type="text">
+                                            </div>                                
+                                        </div>  
+                                        <div class="form-group">
+                                            <div class="form-left">
+                                                <label for="">SS</label>
+                                                <input name="ss" type="text">
+                                            </div>                                
+                                        </div>                                      
+                                        <div class="form-group">
+                                            <div class="form-left">
+                                                <label for="">Caracterização do Sistema de Plantio</label>
+                                                <input name="caracterizacao" type="text">
                                             </div>                                
                                         </div>
                                         <div class="form-group">

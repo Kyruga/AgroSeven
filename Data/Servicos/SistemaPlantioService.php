@@ -12,6 +12,12 @@ class SistemaPlantioService
     public function GetAll() {
         $repo = new SistemaPlantioRepo();
 
-        return $repo->GetAll('sistema_de_plantio');
+        return $repo->GetAll('sistemadeplantio');
+    }
+
+    public function GetById($id) {
+        $repo = new SistemaPlantioRepo();
+
+        return $repo->GetById('sistemadeplantio', $id);
     }
 }

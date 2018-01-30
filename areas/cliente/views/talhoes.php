@@ -322,7 +322,7 @@ use Data\Entidades\Propriedade;
                                         </div>
                                         <div class="form-group">
                                             <input type="submit" class="btn btn-success" value="Salvar" onclick="SalvarEditGleba()" />
-                                            <a href="<?php echo BASEURL ?>areas/administrativo/views/talhoes.php" class="btn btn-default">Ver Talhões</a>
+                                            <a href="<?php echo BASEURL ?>areas/cliente/views/talhoes.php" class="btn btn-default">Ver Talhões</a>
                                             <a href="#" class="btn btn-default" onclick="CarregarGlebas()">Voltar</a>
                                         </div>
                                     </form>

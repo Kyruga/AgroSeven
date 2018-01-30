@@ -4,7 +4,7 @@ namespace data\entidades;
 
 use Data\Entidades\BaseEntidade;
 
-include_once(ROOT . 'data/entidades');
+include_once(ROOT . 'data/entidades/baseentidade.php');
 
 
 class SistemaPlantio extends BaseEntidade

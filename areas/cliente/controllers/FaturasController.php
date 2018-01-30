@@ -1,6 +1,6 @@
 <?php
 
-namespace areas\administrativo\controllers;
+namespace areas\cliente\controllers;
 
 use Data\Entidades\Fatura;
 use Data\Servicos\FaturaService;

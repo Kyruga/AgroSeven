@@ -15,7 +15,7 @@
         <div class="area-login">
             <div class="box-login">
                 <img src="<?php echo BASEURL ?>assets/img/logo-agroseven.svg" class="img-responsive logo" alt="">
-                <h2>ÁREA DO CLIENTE</h2>
+                <h2>ENTRAR NA MINHA ÁREA</h2>
                 <p>FAÇA SEU LOGIN ABAIXO</p>
                 <form action="javascript:void(0);"  method="post" id="formLoginDeUsuario">
                     <div class="form-group">

@@ -1,6 +1,6 @@
 <?php
 
-namespace areas\administrativo\controller;
+namespace areas\cliente\controller;
 
 include_once(ROOT . '/Data/Entidades/BaseEntidade.php');
 include_once(ROOT . '/Data/Entidades/Gleba.php');

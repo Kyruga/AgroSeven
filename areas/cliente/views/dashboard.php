@@ -1,5 +1,5 @@
 <?php
-    $titulo = "Ano Safra - Agroseven";
+    $titulo = "Dashboard - Agroseven";
 
     include_once('../../../Config.php');
 
@@ -197,58 +197,47 @@
             </div>
             <div class="conteudo-at">
                 <div class="lado-esq">
-                    <div id="NovoAnoSafra" style="display:none;">
-                        <h2>Novo Ano Safra</h2>
-                        <div class="form-group">
-                            <label for="">Status do Ano Safra</label>
-                            <input name="status" type="radio" value="1">Aberto</input>
-                            <input name="status" type="radio" value="0">Fechado</input>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Ano de Abertura do Ano Safra</label>
-                            <input name="nome" type="text">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Ano de Fechamento do Ano Safra</label>
-                            <input name="nome" type="text">
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-success" value="Salvar" />
-                        </div>
-                    </div>                    
-                    <div id="FecharAnoSafra" style="display:none;" >
-                        <h2>Fechar Ano Safra</h2>
-                        <div class="form-group">
-                            <label for="">Status do Ano Safra</label>
-                            <input name="status" type="radio" value="1">Aberto</input>
-                            <input name="status" type="radio" value="0">Fechado</input>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Ano de Abertura do Ano Safra</label>
-                            <input name="nome" type="text">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Ano de Fechamento do Ano Safra</label>
-                            <input name="nome" type="text">
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-success" value="Salvar" />
-                        </div>
-                    </div>
+                    <h4>Lançamentos</h4>
+                    <ul>
+                        <li>
+                            <a href="#">Lançar Diagnóstico</a>
+                        </li>
+                        <li>
+                            <a href="#">Iniciar uma aplicação</a>
+                        </li>
+                        <li>
+                            <a href="#">Iniciar Tratos Colhíveis</a>
+                        </li>
+                        <li>
+                            <a href="#"> Iniciar Colheita</a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="lado-dir">
-                    <h4>Lançamentos</h4>
-                        <ul id="menu-coluna">
-                            <li id="NovoAno">
-                                <p>Iniciar Ano Safra</p>
-                            </li>
-                            <li id="FecharAno">
-                                <p>Fechar Ano Safra</p>
-                            </li>
-                        </ul>
-                    <h4>Navegação</h4>
-
-                    <a href="<?php echo BASEURL ?>areas/administrativo/views/dashboard.php" class="btn btn-success">Voltar</a>                    
+                    <h4>Cadastros Agrícolas</h4>
+                    <ul>
+                        <li>
+                            <a href="<?php echo BASEURL ?>areas/cliente/views/anosafra.php">Ajustar Ano Safra</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo BASEURL ?>areas/cliente/views/gleba.php">Cadastro de Gleba</a>
+                        </li>
+                        <li>
+                            <a href="#">Cadastro de talhão</a>
+                        </li>
+                        <li>
+                            <a href="#">Ajuste de tabela de Pragas e Doenças</a>
+                        </li>
+                        <li>
+                            <a href="#">Ajuste de tabela de Recomendações Agrícolas</a>
+                        </li>
+                        <li>
+                            <a href="#">Cadstro de Tipos Defensivos</a>
+                        </li>
+                        <li>
+                            <a href="#">Cadastro de Produtos</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -279,8 +268,8 @@
     <!-- /.modal -->
     <script src="<?php echo BASEURL ?>assets/js/vendor/jquery-1.11.2.min.js"></script>
     <script src="<?php echo BASEURL ?>assets/js/vendor/bootstrap.min.js"></script>
-    <script src="<?php echo BASEURL ?>assets/js/site_adm.js"></script>
     <script src="<?php echo BASEURL ?>assets/js/main.js"></script>
+    <script src="../main.js"></script>
 </body>
 
 </html>

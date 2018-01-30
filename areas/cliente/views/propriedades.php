@@ -1,13 +1,11 @@
 <?php
-
-    $titulo = "propriedades - Agroseven";
+    $titulo = "Minhas Propriedades - Agroseven";
 
     include_once('../../../Config.php');
 
-    include(ROOT . "/views/header.php");   
+    include(ROOT . "/views/header.php");
 ?>
-
-<body onload="CarregarPropriedades()">
+<body>
     <div class="menu-lateral">
         <div class="topo">
             <button type="button" class="btn-fechar-menu"><img src="<?php echo BASEURL ?>assets/img/icone-fechar.svg" alt=""></button>
@@ -30,7 +28,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="meus-dados.html">
+                    <a href="meus-dados.php">
                         <div class="icone">
                             <img src="<?php echo BASEURL ?>assets/img/icone-dados.svg" alt="">
                         </div>
@@ -38,7 +36,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="propriedades.html">
+                    <a href="propriedades.php">
                         <div class="icone">
                             <img src="<?php echo BASEURL ?>assets/img/icone-propriedades.svg" alt="">
                         </div>
@@ -65,7 +63,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="atualizacao.html">
+                    <a href="atualizacao.php">
                         <div class="icone">
                             <img src="<?php echo BASEURL ?>assets/img/icone-atualizacoes.svg" alt="">
                             <div class="alerta">
@@ -78,7 +76,7 @@
             </ul>
         </nav>
         <div class="area-sair">
-            <a href="index.html">sair <img src="<?php echo BASEURL ?>assets/img/seta-baixo-amarela.svg" alt=""></a>
+            <a href="index.php">sair <img src="<?php echo BASEURL ?>assets/img/seta-baixo-amarela.svg" alt=""></a>
         </div>
     </div>
     <div class="menu-lateral">
@@ -103,7 +101,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="meus-dados.html">
+                    <a href="meus-dados.php">
                         <div class="icone">
                             <img src="<?php echo BASEURL ?>assets/img/icone-dados.svg" alt="">
                         </div>
@@ -111,7 +109,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="propriedades.html">
+                    <a href="propriedades.php">
                         <div class="icone">
                             <img src="<?php echo BASEURL ?>assets/img/icone-propriedades.svg" alt="">
                         </div>
@@ -138,7 +136,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="atualizacao.html">
+                    <a href="atualizacao.php">
                         <div class="icone">
                             <img src="<?php echo BASEURL ?>assets/img/icone-atualizacoes.svg" alt="">
                             <div class="alerta">
@@ -151,7 +149,7 @@
             </ul>
         </nav>
         <div class="area-sair">
-            <a href="index.html">sair <img src="<?php echo BASEURL ?>assets/img/seta-baixo-amarela.svg" alt=""></a>
+            <a href="index.php">sair <img src="<?php echo BASEURL ?>assets/img/seta-baixo-amarela.svg" alt=""></a>
         </div>
     </div>
     <header>
@@ -189,7 +187,7 @@
             </div>
             <div class="todas-propriedades">
                 <div class="box-fazenda">
-                    <a href="#">
+                    <a href="dash-propriedade.php">
                         <div class="logo">
                             <img src="<?php echo BASEURL ?>assets/img/logo-fazenda-01.svg" alt="">
                         </div>
@@ -212,7 +210,7 @@
                     </a>
                 </div>
                 <div class="box-fazenda">
-                    <a href="#">
+                    <a href="dash-propriedade.php">
                         <div class="logo">
                             <img src="<?php echo BASEURL ?>assets/img/logo-fazenda.svg" alt="">
                         </div>
@@ -235,7 +233,7 @@
                     </a>
                 </div>
                 <div class="box-add-nova-fazenda">
-                    <a href="dados-basicos.html">
+                    <a href="nova-propriedade.php">
                         <img src="<?php echo BASEURL ?>assets/img/logo-fazenda-02.svg" alt="">
                         <span>adicionar</span>
                         <h1>nova propriedade</h1>
@@ -246,9 +244,7 @@
     </section>
     <script src="<?php echo BASEURL ?>assets/js/vendor/jquery-1.11.2.min.js"></script>
     <script src="<?php echo BASEURL ?>assets/js/vendor/bootstrap.min.js"></script>
-    <script src="<?php echo BASEURL ?>assets/js/site_adm.js"></script>
     <script src="<?php echo BASEURL ?>assets/js/main.js"></script>
-    <script type="text/javascript" src="../main.js"></script>
 </body>
 
 </html>
