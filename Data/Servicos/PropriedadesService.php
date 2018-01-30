@@ -5,6 +5,10 @@ use Data\Repository\PropriedadeRepo;
 use Data\Repository\ProdutoRepo;
 use Data\Entidades\Propriedade;
 
+include_once(ROOT . 'Data\Repository\PropriedadeRepo.php');
+include_once(ROOT . 'Data\Repository\ProdutoRepo.php');
+include_once(ROOT . 'Data\Entidades\Propriedade.php');
+
 class PropriedadesService
 {
     public function __construct() {

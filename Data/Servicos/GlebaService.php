@@ -3,7 +3,10 @@
 namespace Data\Servicos;
 
 use Data\Entidades\Gleba;
-use Data\Entidades\GlebaRepo;
+use Data\Repository\GlebaRepo;
+
+include_once(ROOT . 'Data\Entidades\Gleba.php');
+include_once(ROOT . 'Data\Repository\GlebaRepo.php');
 
 
 class GlebaService

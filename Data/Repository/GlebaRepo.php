@@ -1,6 +1,6 @@
 <?php
 
-namespace Data\Entidades;
+namespace Data\Repository;
 
 use Data\Repository\BaseRepo;
 
